@@ -18,4 +18,10 @@ do_install() {
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
 }
 
+addtask create_pdb_symlink after do_rootfs before do_image
+do_create_pdb_symlink () {
+    ln -sf /opt/Tintometer/bin/TintometerLoader ${IMAGE_ROOTFS}/usr/bin/b2qt
+
+}
+
 do_package_qa[noexec] = "1"
