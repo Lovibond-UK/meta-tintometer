@@ -9,6 +9,9 @@ do_compile() {
     # following compilation will not be seen by bitbake
 }
 
+FILES_${PN} = " /opt/Tintometer/*   "
+INSANE_SKIP_${PN} += "installed-vs-shipped"
+
 do_install() {
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
@@ -16,8 +19,3 @@ do_install() {
 }
 
 do_package_qa[noexec] = "1"
-
-FILES_${PN} = " /opt/Tintometer/*   "
-INSANE_SKIP_${PN} += "installed-vs-shipped"
-
-
