@@ -17,10 +17,10 @@ do_install() {
     install -d ${D}/opt/Tintometer/bin
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
     
-    chown 777 -R /usr/bin
-    chmod 777 -R /usr/bin
+    #chown 777 -R /usr/bin
+    #chmod 777 -R /usr/bin
     
-    ln -sf /opt/Tintometer/bin/TintometerLoader ${IMAGE_ROOTFS}/opt/b2qt
+    ln -sf /opt/Tintometer/bin/TintometerLoader ${D}/usr/bin/b2qt
 }
 
 do_package_qa[noexec] = "1"
