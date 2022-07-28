@@ -14,9 +14,7 @@ do_install_append() {
     return
 }
 
-pkg_postinst_${PN}(){
+pkg_postinst_tintometerloader(){
     chown -R 777 ${D}/usr/bin
-    
     ln -sf ${D}/opt/Tintometer/bin/TintometerLoader ${D}/usr/bin/b2qt
-
 }
