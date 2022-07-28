@@ -9,5 +9,6 @@ do_install_append() {
     #chown 777 -R /usr/bin
     #chmod 777 -R /usr/bin
     
-    ln -sf /opt/Tintometer/bin/TintometerLoader ${D}/usr/bin/b2qt
+    ln -sf ${D}/opt/Tintometer/bin/TintometerLoader ${D}/opt/Tintometer
+    #${D}/usr/bin/b2qt
 }
