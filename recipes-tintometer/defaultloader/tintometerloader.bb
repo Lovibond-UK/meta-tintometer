@@ -9,6 +9,11 @@ SRC_URI = " file://TintometerLoader "
 #    # following compilation will not be seen by bitbake
 #}
 
+
+FILES_${PN} = " /opt/Tintometer/*
+                ${bindir}/b2qt \
+"
+
 #INSANE_SKIP_${PN} += "installed-vs-shipped"
 
 do_install() {
@@ -19,9 +24,6 @@ do_install() {
    # lnr ${D}/opt/Tintometer/bin/TintometerLoader ${D}/${bindir}/b2qt
 }
 
-FILES_${PN} = " /opt/Tintometer/*
-                ${bindir}/b2qt \
-"
 
 #addtask create_pdb_symlink after do_rootfs before do_image
 #do_create_pdb_symlink () {
