@@ -10,7 +10,7 @@ SRC_URI = " file://TintometerLoader "
 #}
 
 
-FILES_${PN} = " /opt/Tintometer/*
+FILES_${PN} = " ${D}/opt/Tintometer/* \
                 ${bindir}/b2qt \
 "
 
