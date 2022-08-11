@@ -2,7 +2,7 @@ SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "Recipe created by bitbake-layers"
 LICENSE = "CLOSED"
 
-SRC_URI = " file://TintometerLoader \ "
+SRC_URI = " file://TintometerLoader  "
 
 FILES_${PN} = " ${D}/opt/Tintometer/* \
                 ${bindir}/b2qt \ "
