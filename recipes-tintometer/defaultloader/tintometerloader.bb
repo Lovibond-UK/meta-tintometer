@@ -19,7 +19,7 @@ do_install() {
    # lnr ${D}/opt/Tintometer/bin/TintometerLoader ${D}/${bindir}/b2qt
 }
 
-FILES_${PN} = " ${D}/opt/Tintometer/*
+FILES_${PN} = " /opt/Tintometer/*
                 ${bindir}/b2qt \
 "
 
