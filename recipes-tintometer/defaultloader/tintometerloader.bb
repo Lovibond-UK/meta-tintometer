@@ -2,19 +2,12 @@ SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "Recipe created by bitbake-layers"
 LICENSE = "CLOSED"
 
-SRC_URI = " file://TintometerLoader "
-
-do_compile() {
-    return
-    # following compilation will not be seen by bitbake
-}
-
+SRC_URI = " file://TintometerLoader \ "
 
 FILES_${PN} = " ${D}/opt/Tintometer/* \
-                ${bindir}/b2qt \
-"
+                ${bindir}/b2qt \ "
 
-INSANE_SKIP_${PN} += "installed-vs-shipped"
+#INSANE_SKIP_${PN} += "installed-vs-shipped"
 
 do_install() {
     install -d ${D}/opt/Tintometer
