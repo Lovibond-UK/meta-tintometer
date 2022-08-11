@@ -14,7 +14,7 @@ do_install() {
     install -d ${D}/opt/Tintometer/bin
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
     
-    lnr ${D}/opt/Tintometer/bin/TintometerLoader ${D}/usr/bin/b2qt
+    lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
 }
 
 
