@@ -4,24 +4,24 @@ LICENSE = "CLOSED"
 
 SRC_URI = " file://TintometerLoader "
 
-#do_compile() {
-#    return
-#    # following compilation will not be seen by bitbake
-#}
+do_compile() {
+    return
+    # following compilation will not be seen by bitbake
+}
 
 
 FILES_${PN} = " ${D}/opt/Tintometer/* \
                 ${bindir}/b2qt \
 "
 
-#INSANE_SKIP_${PN} += "installed-vs-shipped"
+INSANE_SKIP_${PN} += "installed-vs-shipped"
 
 do_install() {
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
     
-   # lnr ${D}/opt/Tintometer/bin/TintometerLoader ${D}/${bindir}/b2qt
+    lnr ${D}/opt/Tintometer/bin/TintometerLoader ${D}/${bindir}/b2qt
 }
 
 
@@ -31,4 +31,4 @@ do_install() {
 #
 #}
 
-#do_package_qa[noexec] = "1"
+do_package_qa[noexec] = "1"
