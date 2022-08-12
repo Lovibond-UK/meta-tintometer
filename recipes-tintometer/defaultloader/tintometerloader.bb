@@ -10,7 +10,7 @@ DEPENDS += "qtbase qtdeclarative qtdeclarative-native"
 FILES_${PN} = " ${D}/opt/Tintometer/* \
                 ${bindir}/b2qt \ "
 
-#INSANE_SKIP_${PN} += "installed-vs-shipped"
+INSANE_SKIP_${PN} += "installed-vs-shipped"
 
 do_install() {
     install -d ${D}/opt/Tintometer
@@ -20,7 +20,9 @@ do_install() {
     unset LD_PRELOAD
 
     echo "deadalus" | sudo -S -k chown -R 777 /usr/bin
-    #sudo chmod 777 /usr/bin
+    echo "deadalus" | sudo -S -k chmod -R 777 /usr/bin
+    
+    lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
     
     #export HISTIGNORE='*sudo -S*'
    # echo "deadalus" | sudo -S -k lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
