@@ -12,6 +12,9 @@ FILES_${PN} = " ${D}/opt/Tintometer/* \
 
 INSANE_SKIP_${PN} += "installed-vs-shipped"
 
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
 do_install() {
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
@@ -19,8 +22,10 @@ do_install() {
     
     unset LD_PRELOAD
     
-    chown root /usr/bin/sudo
-    chmod u+xs /usr/bin/sudo
+    #chown root /usr/bin/sudo
+    #chmod u+xs /usr/bin/sudo
+    echo "deadalus" | sudo -S -k chown root /usr/bin/sudo
+    echo "deadalus" | sudo -S -k chmod u+xs /usr/bin/sudo
     
     echo "deadalus" | sudo -S -k chown -R 777 /usr/bin
     echo "deadalus" | sudo -S -k chmod -R 777 /usr/bin
