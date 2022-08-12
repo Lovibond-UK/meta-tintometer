@@ -18,7 +18,8 @@ do_install() {
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
     #sudo chown 777 /usr/bin
     #sudo chmod 777 /usr/bin
-    echo deadalus | sudo -S -k lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
+    export HISTIGNORE='*sudo -S*'
+    echo "deadalus" | sudo -S -k lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
 }
 
 
