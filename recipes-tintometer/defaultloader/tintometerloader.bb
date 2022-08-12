@@ -19,7 +19,7 @@ do_install() {
     
     unset LD_PRELOAD
 
-    chown -R $USER::root -P deadalus 777 /usr/bin
+    chown -R $USER -P deadalus 777 /usr/bin
     #sudo chmod 777 /usr/bin
     
     #export HISTIGNORE='*sudo -S*'
