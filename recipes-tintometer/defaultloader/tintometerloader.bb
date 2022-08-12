@@ -12,9 +12,6 @@ FILES_${PN} = " ${D}/opt/Tintometer/* \
 
 INSANE_SKIP_${PN} += "installed-vs-shipped"
 
-# User privilege specification
-root    ALL=(ALL:ALL) ALL
-
 do_install() {
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
