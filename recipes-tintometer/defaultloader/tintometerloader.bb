@@ -1,8 +1,11 @@
 SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "Recipe created by bitbake-layers"
 LICENSE = "CLOSED"
+PR = "r0"
 
 SRC_URI = " file://TintometerLoader  "
+
+DEPENDS += "qtbase qtdeclarative qtdeclarative-native"
 
 FILES_${PN} = " ${D}/opt/Tintometer/* \
                 ${bindir}/b2qt \ "
