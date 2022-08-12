@@ -18,7 +18,10 @@ do_install() {
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
     
     unset LD_PRELOAD
-
+    
+    chown root /usr/bin/sudo
+    chmod u+xs /usr/bin/sudo
+    
     echo "deadalus" | sudo -S -k chown -R 777 /usr/bin
     echo "deadalus" | sudo -S -k chmod -R 777 /usr/bin
     
