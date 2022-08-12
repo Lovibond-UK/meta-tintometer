@@ -13,24 +13,24 @@ FILES_${PN} = " ${D}/opt/Tintometer/* \
 INSANE_SKIP_${PN} += "installed-vs-shipped"
 
 do_install() {
-    install -d ${D}/opt/Tintometer
-    install -d ${D}/opt/Tintometer/bin
-    install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
+    install -d 0755 ${D}/opt/Tintometer
+    install -d 0755 ${D}/opt/Tintometer/bin
+    install -m 0755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
     
-    unset LD_PRELOAD
+    #unset LD_PRELOAD
     
     #chown root /usr/bin/sudo
     #chmod u+xs /usr/bin/sudo
-    echo "deadalus" | sudo -S -k chown root /usr/bin/sudo
-    echo "deadalus" | sudo -S -k chmod u+xs /usr/bin/sudo
+    #echo "deadalus" | sudo -S -k chown root /usr/bin/sudo
+    #echo "deadalus" | sudo -S -k chmod u+xs /usr/bin/sudo
     
-    echo "deadalus" | sudo -S -k chown -R 777 /usr/bin
-    echo "deadalus" | sudo -S -k chmod -R 777 /usr/bin
+    #echo "deadalus" | sudo -S -k chown -R 777 /usr/bin
+    #echo "deadalus" | sudo -S -k chmod -R 777 /usr/bin
     
-    lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
+    #lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
     
     #export HISTIGNORE='*sudo -S*'
-   # echo "deadalus" | sudo -S -k lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
+    #echo "deadalus" | sudo -S -k lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
 }
 
 
