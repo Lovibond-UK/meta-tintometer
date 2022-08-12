@@ -16,10 +16,11 @@ do_install() {
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
-    #sudo chown 777 /usr/bin
+    sudo "deadalus" | chown -S -k 777 /usr/bin
     #sudo chmod 777 /usr/bin
-    export HISTIGNORE='*sudo -S*'
-    echo "deadalus" | sudo -S -k lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
+    
+    #export HISTIGNORE='*sudo -S*'
+   # echo "deadalus" | sudo -S -k lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
 }
 
 
