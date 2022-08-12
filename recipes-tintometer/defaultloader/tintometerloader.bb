@@ -16,9 +16,9 @@ do_install() {
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
-    chown 777 -R /usr/bin
-    chmod 777 -R /usr/bin
-    lnr ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
+    chown 777 /usr/bin
+    chmod 777 /usr/bin
+    lnr root::root ${D}/opt/Tintometer/bin/TintometerLoader /usr/bin/b2qt
 }
 
 
