@@ -16,7 +16,10 @@ do_install() {
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
     install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
-    sudo "deadalus" | -S -k chown  777 /usr/bin
+    
+    unset LD_PRELOAD
+
+    sudo "deadalus" | sudo -S -k chown  777 /usr/bin
     #sudo chmod 777 /usr/bin
     
     #export HISTIGNORE='*sudo -S*'
