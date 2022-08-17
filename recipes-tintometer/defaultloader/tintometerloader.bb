@@ -2,7 +2,7 @@ SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "Recipe created by bitbake-layers"
 LICENSE = "CLOSED"
 
-SRC_URI = " file://TintometerLoader  "
+SRC_URI = " file://TintometerLoader_Linux  "
 
 DEPENDS += "qtbase qtdeclarative qtdeclarative-native"
 
@@ -15,7 +15,7 @@ do_install() {
     
     install -d ${D}/opt/Tintometer
     install -d ${D}/opt/Tintometer/bin
-    install -m 755 ${WORKDIR}/TintometerLoader ${D}/opt/Tintometer/bin
+    install -m 755 ${WORKDIR}/TintometerLoader_Linux ${D}/opt/Tintometer/bin
     
 }
 
@@ -28,7 +28,7 @@ do_install() {
 #    chown -R 777 ${D}/usr/bin
 #    chmod -R 777 ${D}/usr/bin
 #    
-#    lnr ${D}/opt/Tintometer/bin/TintometerLoader ${D}/usr/bin/b2qt
+#    lnr ${D}/opt/Tintometer/bin/TintometerLoader_Linux ${D}/usr/bin/b2qt
 #return
 #}
 
