@@ -13,8 +13,7 @@ INSANE_SKIP_${PN} += "installed-vs-shipped"
 
 DO_INSTALL() {
     install -d ${D}/opt/Tintometer
-    install -d ${D}/opt/Tintometer/bin
-    install -m 755 ${WORKDIR}/TintometerLoader_Linux ${D}/opt/Tintometer/bin
+    install -m 755 ${WORKDIR}/TintometerLoader_Linux ${D}/opt/Tintometer
 }
 
 do_package_qa[noexec] = "1"
